@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Video Games - 3DVerse</title>
+    <link rel="stylesheet" href="./_assets/css/styles.css">
+    <link rel="shortcut icon" href="./_assets/images/logo.svg" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <a class="logo__header" href="./"><img src="./_assets/images/logo.svg" alt="Logo"></a>
+        <div class="profile-navigation">
+            <button class="btn btn__profile" type="button">JB</button>
+            <button class="btn btn__navigation" type="button">
+                <img src="./_assets/images/icon_menu.svg" alt="Open the navigation menu by clicking here">
+            </button>
+        </div>
+    </header>
+    <main class="main">
+        <h1 class="headline headline__title">My video games</h1>
+        <div class="menu menu__sort-and-filter">
+            <div class="wrapper__sort">
+                <button class="btn btn__sort" type="button">Sort <img src="./_assets/images/icon_sort.svg" alt="Sort your video games" class="icon icon__sort"></button>
+                <div class="menu__sort">
+                    <ul class="list-style--none margin--none padding--none">
+                        <li class="menu-list-item"><button type="button" class="btn">Oldest Played</button></li>
+                        <li class="menu-list-item"><button type="button" class="btn btn--selected">Latest Played</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wrapper__filter">
+                <button class="btn btn__filter" type="button">Filter <img src="./_assets/images/icon_filter.svg" alt="Filter your video games" class="icon icon__filter"></button>
+                <div class="menu__filter">
+                    <ul class="list-style--none margin--none padding--none">
+                        <li class="menu-list-item"><button type="button" class="btn btn--selected">All videos games</button></li>
+                        <li class="menu-list-item"><button type="button" class="btn">My video games</button></li>
+                        <li class="menu-list-item"><button type="button" class="btn">Suggested video games</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="section section__video-games-list">
+            <article class="article article__video-game video-game--suggested">
+                <div class="video-game__image">
+                    <img src="./_assets/images/video-games_legend-of-zelda.jpg" alt="Cover art of The Legend of Zelda" class="image">
+                </div>
+                <div class="video-game__description">
+                    <h2 class="video-game__title">The Legend of Zelda</h2>
+                    <p class="video-game__publisher">This video game is made by Nintendo</p>
+                </div>
+                <div class="video-game__meta">
+                    <p class="meta__time">3 months ago</p>
+                    <p class="meta__event">Aline suggested this game with you</p>
+                </div>
+            </article>
+            <article class="article article__video-game">
+                <div class="video-game__image">
+                    <img src="./_assets/images/video-games_gtav.jpg" alt="Cover art of GTAV" class="image">
+                </div>
+                <div class="video-game__description">
+                    <h2 class="video-game__title">GTA V</h2>
+                    <p class="video-game__publisher">This video game is made by Rockstar</p>
+                </div>
+                <div class="video-game__meta"></div>
+            </article>
+            <article class="article article__video-game video-game--upcoming">
+                <div class="video-game__image">
+                    <img src="./_assets/images/video-games_acm.jpg" alt="Cover art of Assassin's Creed Mirage" class="image">
+                </div>
+                <div class="video-game__description">
+                    <h2 class="video-game__title">Assassin's Creed Mirage</h2>
+                    <p class="video-game__publisher">This video game is made by Ubisoft</p>
+                </div>
+                <div class="video-game__meta"></div>
+            </article>
+            <article class="article article__video-game video-game--upcoming video-game--suggested">
+                <div class="video-game__image">
+                    <img src="./_assets/images/video-games_poplc.jpg" alt="Cover art of Prince of Persia: The Lost Crown" class="image">
+                </div>
+                <div class="video-game__description">
+                    <h2 class="video-game__title">Prince of Persia: The Lost Crown</h2>
+                    <p class="video-game__publisher">This video game is made by Ubisoft</p>
+                </div>
+                <div class="video-game__meta">
+                    <p class="meta__time">3 months ago</p>
+                    <p class="meta__event">Aline suggested this game with you</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="footer"></footer>
+</body>
+<script src="./_assets/js/scripts.js" async></script>
+</html>

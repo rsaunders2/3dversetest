@@ -1,0 +1,247 @@
+/* Import additional css and fonts */
+@import url('./normalize.css');
+@import url('./elements.css');
+
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url('../fonts/Inter-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Inter-SemiBold';
+    src: url('../fonts/Inter-SemiBold.ttf');
+}
+
+/* Root Styles */
+:root {
+    /* Define Layout */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content, 1fr, max-content;
+
+    /* Colour varibales RGB values sans alpha channel */
+    --colour-shadow: 7, 11, 20;
+    --colour-bg-page: 19, 26, 52;
+    --colour-bg-header: 24, 38, 70;
+    --colour-block-body: 46, 64, 129;
+    --colour-text: 211, 213, 236;
+    --colour-accent-red: 129, 34, 73;
+    --colour-accent-green: 74, 142, 65;
+
+    /* General styles (define rem size and body text font-family) */
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Inter-Regular', 'Helvetica', sans-serif;
+    color: rgb(var(--colour-text));
+    background-color: rgb(var(--colour-bg-page));
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: rgb(var(--colour-shadow));
+}
+
+.header .logo__header {
+    width: 6rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header .profile-navigation {
+    display: flex;
+    column-gap: .625rem;
+    align-items: center;
+    padding-left: 1rem;
+    box-shadow: -1px 0 0 0 rgb(var(--colour-bg-page));
+}
+
+.header .btn {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+}
+
+.header .btn__profile {
+    background: rgb(var(--colour-text));
+    color: rgb(var(--colour-shadow));
+    box-shadow: 0 0 0 1px rgb(var(--colour-shadow));
+    border-radius: 2rem;
+}
+
+/* Main */
+
+.headline__title {
+    margin: 1rem 0 .5rem;
+}
+
+.menu__sort-and-filter {
+    height: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.wrapper__sort,
+.wrapper__filter {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.btn__sort,
+.btn__filter {
+    padding: .625rem;
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    color: rgb(var(--colour-text));
+    border-radius: .5rem .5rem 0 0;
+}
+
+.btn__sort.btn--selected,
+.btn__filter.btn--selected {
+    background-color: rgb(var(--colour-block-body));
+    box-shadow: .25rem .25rem rgba(0,0,0,.35);
+}
+
+.btn__sort .icon__sort {
+    width: 1rem;
+    height: .625rem;
+}
+
+.btn__filter .icon__filter {
+    width: .875rem;
+    height: .75rem;
+}
+
+.menu__sort,
+.menu__filter {
+    min-width: 50vw;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    padding: .625rem;
+    background-color: rgb(var(--colour-block-body));
+    border-radius: .5rem 0 .5rem .5rem;
+    box-shadow: .25rem .25rem rgba(0,0,0,.35);
+    display: none;
+}
+
+.menu__sort ul,
+.menu__filter ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.menu__sort ul .menu-list-item,
+.menu__filter ul .menu-list-item {
+    display: flex;
+}
+
+.menu__sort ul .menu-list-item .btn,
+.menu__filter ul .menu-list-item .btn {
+    flex: 1 1 auto;
+    text-align: left;
+    color: rgb(var(--colour-text));
+}
+.menu__sort ul .menu-list-item .btn.btn--selected,
+.menu__filter ul .menu-list-item .btn.btn--selected {
+    background-color: rgb(var(--colour-shadow));
+}
+
+.btn__sort.btn.btn--selected ~ .menu__sort,
+.btn__filter.btn--selected ~ .menu__filter {
+    display: block;
+}
+
+/* Video Game List */
+.article__video-game {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(var(--colour-shadow));
+}
+
+.article__video-game .video-game__image {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-game__image .image {
+    width: 100%;
+}
+
+.video-game__description {
+    background-color: rgb(var(--colour-bg-header));
+    padding-top: .625rem;
+    padding-bottom: .625rem;
+}
+
+.video-game__description .video-game__title {
+    height: 2rem;
+    margin: 0;
+    line-height: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.video-game__description .video-game__publisher {
+    margin: 0;
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.video-game__meta:not(:empty) {
+    padding: .625rem;
+    text-align: right;
+    background-color: rgb(var(--colour-block-body));
+}
+
+.video-game__meta .meta__time,
+.video-game__meta .meta__event {
+    padding: 0;
+    margin: 0;
+}
+
+.video-game__meta .meta__event {
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-style: italic;
+}
+
+
+@media only screen and (max-width:540px) {
+    body > .header,
+    body > .footer {
+        padding-right: .625rem;
+        padding-left: .625rem;
+    }
+    
+    .headline__title,
+    .article__video-game .video-game__description > *,
+    .article__video-game .video-game__meta > * {
+        padding-left: .625rem;
+        padding-right: .625rem;
+    }
+
+    .video-game__description .video-game__title {
+        width: calc(100vw - 1.25rem);
+    }
+}
+
+
