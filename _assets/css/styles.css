@@ -176,15 +176,55 @@
     width: 100%;
     height: 15rem;
     overflow: hidden;
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr repeat(2, 1.875rem) .625rem;
+    grid-template-columns: 1fr .625rem;
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    position: relative;
 }
 
 .video-game__image .image {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-row: 1 / 5;
+    grid-column: 1 / 4;
+    z-index: 1;
 }
 
+/* Suggested and Upcoming tags */
+.video-game__tags {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    justify-self: end;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    row-gap: .25rem;
+}
+
+.article__video-game.video-game--upcoming .video-game__tags::before,
+.article__video-game.video-game--suggested .video-game__tags::after {
+    width: 7.875rem;
+    height: 2rem;
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-style: italic;
+    color: rgb(var(--colour-text));
+    border-radius: .5rem;
+}
+
+.article__video-game.video-game--upcoming .video-game__tags::before {
+    content: url("../images/icon_upcoming.svg");
+}
+
+.article__video-game.video-game--suggested .video-game__tags::after {
+    content: url("../images/icon_suggested.svg");
+}
 .video-game__description {
     background-color: rgb(var(--colour-bg-header));
     padding-top: .625rem;
